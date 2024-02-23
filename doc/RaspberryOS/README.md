@@ -45,6 +45,15 @@ What we are really would like to see here is the `PREEMPT_RT` word. This is the 
 **Note: `USB SSD` ≠ `USB-stick`!** I tried to test my 8Gb USB-stck and found its perfomance even worth than just my `SD Card` (apt update + apt upgrade operations took ~3 hours!). So I suggest to do that only if you have exactly `USB SSD`! 
 Clone your `SD Card` using standard Raspberry `SD card copier` (`Accessories > SD Card Copier`) and follow the [instructions](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#bootloader_update_stable) to update bootloader and change the boot priority. All the disk operations should be faster after booting from `USB SSD`.|
 
+🖥️🐞 First of all fixing the bug 'Session closes after hdmi monitor switches off/on (https://forums.raspberrypi.com/viewtopic.php?p=2175546#p2173369):
+```bash
+sudo nano /boot/firmware/cmdline.txt
+```
+add to the end:
+```r
+vc4.force_hotplug=1
+```
+
 Now let's get installed the latest available updates.
 ```
 sudo apt update
@@ -235,7 +244,7 @@ As a bonus we have Debian packages in home user directory:
 ```
 ls *.deb
 ```
-We should see the list of all the packages prepared.
+We should see the list of prepared packages .
 ```
 linuxcnc-uspace_2.9.2_arm64.deb
 linuxcnc-uspace-dev_2.9.2_arm64.deb
@@ -249,11 +258,28 @@ linuxcnc-build-deps_2.9.2_all.deb
 ```
 This is it about LinuxCNC itself.
 
-## 7. GPIO driver
+## 6. GPIO driver
+Base information https://linuxcnc.org/docs/devel/html/drivers/hal_pi_gpio.html
+
+## 10. LinuxCNC configuration
 TBD...
 
-## 6. Mesa driver
-TBD...
+## 7. Mesa flash utility (mesaflash)
+Installation:
+```bash
+sudo apt install mesaflash -y
+```
 
-## 7. LinuxCNC configuration
-TBD...
+## 8. FPGA RV901T as Mesa 7i90
+Hardware and required changes described here:
+- https://github.com/q3k/chubby75/tree/master/rv901t
+- https://github.com/q3k/chubby75/blob/master/rv901t/doc/hardware.md
+- https://github.com/sensille/litehm2
+- https://forum.linuxcnc.org/27-driver-boards/47730-new-project-litehm2-a-hostmot2-port-to-linsn-rv901
+- https://github.com/trabucayre/openFPGALoader
+
+Installation of openosd
+```bash
+sudo apt install openocd -y
+```
+
