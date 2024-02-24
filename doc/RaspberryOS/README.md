@@ -190,8 +190,8 @@ Finally we have all we need to replace system files with just built ones
 sudo cp arch/arm64/boot/dts/broadcom/*.dtb /boot/firmware/
 sudo cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
 sudo cp arch/arm64/boot/dts/overlays/README /boot/firmware/overlays/
-sudo cp /boot/$KERNEL.img /boot/$KERNEL-non-rt.img #backup kernel image
-sudo cp arch/arm64/boot/Image.gz /boot/$KERNEL.img
+sudo cp /boot/firmware/$KERNEL.img /boot/firmware/$KERNEL-non-rt.img #backup
+sudo cp arch/arm64/boot/Image.gz /boot/firmware/$KERNEL.img
 ```
 ```bash
 sudo reboot
