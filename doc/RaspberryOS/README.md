@@ -156,7 +156,7 @@ Go to
 Save and Exit.   
 Congrats! You can find updated kernel configuration in `.config` file.
 
-| ❓ WHY RCU AND TIMERS❓ |
+| ❓ WHY RCU AND TIMERS ❓ |
 | :--- |
 | I have read tons of the instructions before and I found that together with `isolcpus` there very ofthen people suggested to set `rcu_nocbs` and `nohz_full`. Finally I found the description where provided high-level explanation of kernel parameters like `isolcpus`, `rcu_nocbs`, and `nohz_full`: https://www.kernel.org/doc/html/v6.1/admin-guide/kernel-parameters.html. |
 | For deep learning:
@@ -170,7 +170,7 @@ So, at this point we have our kernel configuration stored in ```.config``` file.
  Let's build our patched kernel. Internet says that this could take up to 10 hours, but in my case it took ~4 hours.
 Fasten your seat belt while seated...
 ```bash
-make -j4 Image.gz modules dtbs
+sudo make -j4 Image.gz modules dtbs
 ```
 After several hours of building... Check that `KERNEL` variable still defined:
 ```bash
