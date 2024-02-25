@@ -68,16 +68,16 @@ Please proceed with the [Building a kernel](#4.-Building-a-kernel-with-PREEMPT_R
 Do this on your risk and only if you are sure.
 This overclocking was tested on Raspberry Pi 4b (4Gb) with aluminium radiators (on cpu, gpu, and ram chips) and cooling fan and it works for me. |
 
-Open `cmdline.txt` in any text editor, for example:
+Open `config.txt` in any text editor, for example:
 ```bash
-sudo nano /boot/firmware/cmdline.txt
+sudo nano /boot/firmware/config.txt
 ```
 and add several lines to the bottom to overclock the CPU from 1500 MHz to 2147 MHz.
 ```r
 force_turbo=1
-over_voltage=6
-arm_freq=2147
-gpu_freq=750 
+over_voltage=5
+arm_freq=2000
+gpu_freq=700
 ```
 Reboot to apply these changes
 ```
