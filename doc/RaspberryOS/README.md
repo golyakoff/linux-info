@@ -72,7 +72,7 @@ Open `config.txt` in any text editor, for example:
 ```bash
 sudo nano /boot/firmware/config.txt
 ```
-and add several lines to the bottom to overclock the CPU from 1500 MHz to 2147 MHz.
+and add several lines to the bottom to overclock the CPU from 1500 MHz to 2000 MHz (in theory it is possible to get even 2147 MHz but I stopped at 2000 MHz).
 ```r
 force_turbo=1
 over_voltage=5
